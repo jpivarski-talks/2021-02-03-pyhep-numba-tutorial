@@ -25,14 +25,16 @@ The exercises you should run are on Binder:  **FIXME**
   </a>
 <br>
 
-The primary way to ask questions will be on Slido:
+The primary way to ask questions will be on Slido, though you can also raise your hand in Zoom:
 
 <br>
 <p align="center">
   <a href="https://app.sli.do/event/5qgdr4ir">
-    <img src="img/slido.png" alt="Launch Slido" width="100%">
+    <img src="img/slido.png" alt="Launch Slido" width="50%">
   </a>
 <br>
+
+Neither Binder nor Slido require authentication.
 
 ## How do I follow up after the event is over?
 
@@ -41,3 +43,5 @@ The introductory slides are here.  **FIXME**
 The evaluated notebook is here.  **FIXME**
 
 A recording of the tutorial session is here.  **FIXME**
+
+Join the [PyHEP mailing list](https://hepsoftwarefoundation.org/workinggroups/pyhep.html) or [Gitter channel](https://gitter.im/HSF/PyHEP).
