@@ -38,7 +38,7 @@ Neither Binder nor Slido require authentication.
 
 ## How do I follow up after the event is over?
 
-The [introductory slides are here](intro.pdf).
+The [introductory slides are here](https://github.com/jpivarski-talks/2021-02-03-pyhep-numba-tutorial/raw/main/intro.pdf).
 
 The evaluated notebook is here.  **FIXME**
 
