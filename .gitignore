@@ -1,4 +1,4 @@
-intro/_minted-main/
+intro/_minted-main
 intro/main.aux
 intro/main.log
 intro/main.nav
@@ -7,3 +7,4 @@ intro/main.pdf
 intro/main.snm
 intro/main.toc
 intro/main.vrb
+.ipynb_checkpoints

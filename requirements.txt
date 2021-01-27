@@ -1,0 +1,4 @@
+numpy==1.19.5
+numba==0.52.0
+matplotlib==3.3.0
+awkward==1.0.2
