@@ -138,11 +138,54 @@ compilation can be piecemeal and applied at any time.
 \item \mintinline{python}{ROOT.gInterpreter.Declare("...")} $\longrightarrow$ ROOT's Cling compiles strings of C++ code to machine-native bytecode instructions.
 \item \mintinline{python}{rdf.Define("...")} $\longrightarrow$ ROOT's RDataFrame also uses Cling.
 \item Numba and PyPy compile Python to machine-native bytecode instructions.
-\item Julia is a language designed around this just-in-time (JIT) compilation.
+\item Julia is a language designed around this \only<1>{just-in-time (JIT) compilation.}\only<2>{\textcolor{darkorange}{\bf just-in-time (JIT) compilation.}}
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Just-in-time (JIT) compilers for Python}
+\large
 
+\begin{columns}
+\column{0.5\linewidth}
+\begin{center}
+\includegraphics[width=0.75\linewidth]{numba-logo.png}
+\end{center}
+
+Runs within normal CPython (can be used with other Python libraries).
+
+\vspace{0.2 cm}
+
+Only speeds up functions labeled with the \mintinline{python}{@numba.jit} decorator.
+
+\vspace{0.2 cm}
+
+\only<1>{Only a subset of Python \mbox{features\hspace{0.75 cm}} and functions can be JIT-compiled.}\only<2>{\textcolor{darkorange}{\bf Only a subset of Python features and functions can be JIT-compiled.}}
+
+\vspace{0.2 cm}
+
+Gains are often \textcolor{darkblue}{factors of 100's}.
+
+\column{0.5\linewidth}
+\begin{center}
+\includegraphics[width=0.75\linewidth]{pypy-logo.jpg}
+\end{center}
+
+Replaces the CPython process; not all libraries/versions of Python work.
+
+\vspace{0.2 cm}
+
+Speeds up the whole program. \mbox{\hspace{4 cm}}
+
+\vspace{0.2 cm}
+
+All Python features are JIT-compiled. \mbox{\hspace{4 cm}}
+
+\vspace{0.2 cm}
+
+Gains are often \textcolor{darkblue}{factors of several}.
+
+\end{columns}
+\end{frame}
 
 
 
