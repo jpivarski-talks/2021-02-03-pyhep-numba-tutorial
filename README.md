@@ -38,7 +38,7 @@ Neither Binder nor Slido require authentication.
 
 ## How do I follow up after the event is over?
 
-The introductory slides are here.  **FIXME**
+The [introductory slides are here](intro.pdf).
 
 The evaluated notebook is here.  **FIXME**
 
