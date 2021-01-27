@@ -33,7 +33,7 @@
 \definecolor{darkgreen}{rgb}{0,0.6,0}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\title[2021-02-03-pyhep-numba-tutorial]{{\LARGE PyHEP Numba Tutorial} \vspace{0.2 cm}\\ or \vspace{0.2 cm}\\ Getting Numba to Do What You Want}
+\title[2021-02-03-pyhep-numba-tutorial]{{\vspace{0.4 cm}\\ \LARGE PyHEP Numba Tutorial} \vspace{0.2 cm}\\ or \vspace{0.2 cm}\\ Getting Numba to Do What You Want}
 \author{Jim Pivarski}
 \institute{Princeton University -- IRIS-HEP}
 \date{February 3, 2021}
@@ -57,7 +57,94 @@
 
 % START START START START START START START START START START START START START
 
-\begin{frame}{First slide}
+\begin{frame}{To optimize or not to optimize?}
+\Large
+\vspace{0.4 cm}
+\textcolor{darkblue}{Scientific computing is of two minds about accelerating code:}
+
+\vspace{0.2 cm}
+\begin{center}
+\begin{minipage}{0.75\linewidth}
+\begin{block}{}
+``Tweaking performance should take a back seat to the science.''
+\end{block}
+
+\begin{block}{}
+``If it doesn't run within time/memory constraints, we can't perform this measurement.''
+\end{block}
+\end{minipage}
+\end{center}
+
+\vspace{0.5 cm}
+\uncover<2->{Both are true, so it's a balance. The objective: \textcolor{darkorange}{\bf ``time to insight.''}}
 \end{frame}
+
+\begin{frame}{Compilation}
+\Large
+\vspace{0.5 cm}
+Roughly speaking, compilation makes code faster.
+
+\vspace{0.5 cm}
+\uncover<2->{\textcolor{darkblue}{More precisely, removing hurdles takes the slowness out of code.}}
+\large
+
+\vspace{0.5 cm}
+\begin{uncoverenv}<2->
+\hfill\begin{minipage}{0.97\linewidth}
+\begin{itemize}
+\item Avoid type-checking every value in a loop over identically typed data.
+\item Avoid following pointers from objects to objects.
+\item Avoid nonsequential memory access.
+\item Avoid translating virtual machine \\ instructions into real instructions.
+\item Avoid garbage collector searches \\ for many small objects.
+\end{itemize}
+\end{minipage}
+
+\vspace{-2.5 cm}
+\hfill \includegraphics[width=5.5 cm]{hurdle9.jpg}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}[fragile]{Compilation is not a monolithic thing}
+\Large
+
+\vspace{0.5 cm}
+Though usually thought of as single step applying all optimizations,
+
+\vspace{0.2 cm}
+\hspace{0.6 cm} \begin{minipage}{0.9\linewidth}
+\begin{minted}{bash}
+c++ my_source_code.cpp -o now_its_faster
+\end{minted}
+\end{minipage}
+
+\vspace{0.25 cm}
+compilation can be piecemeal and applied at any time.
+
+\vspace{0.5 cm}
+
+\mbox{ } \hfill \includegraphics[height=5 cm]{lisp-faster-than-c.png} \hfill \mbox{ }
+\end{frame}
+
+\begin{frame}{Compilers are everywhere}
+\large
+\vspace{0.35 cm}
+
+\begin{itemize}\setlength{\itemsep}{0.27 cm}
+\item Python is ``compiled'' from source code to numeric bytecodes that run in a virtual machine. (At least it isn't scanning the source code over and over!)
+\item \mintinline{python}{re.compile("...")} $\longrightarrow$ regular expression to finite state machine.
+\item \mintinline{python}{struct.Struct("...")} $\longrightarrow$ same thing for parsing bytes.
+\item \mintinline{python}{numexpr.evaluate("...")} $\longrightarrow$ NumExpr's virtual machine for evaluating math formulas is faster than NumPy.
+\item \mintinline{python}{ROOT.gInterpreter.Declare("...")} $\longrightarrow$ ROOT's Cling compiles strings of C++ code to machine-native bytecode instructions.
+\item \mintinline{python}{rdf.Define("...")} $\longrightarrow$ ROOT's RDataFrame also uses Cling.
+\item Numba and PyPy compile Python to machine-native bytecode instructions.
+\item Julia is a language designed around this just-in-time (JIT) compilation.
+\end{itemize}
+\end{frame}
+
+
+
+
+
 
 \end{document}
