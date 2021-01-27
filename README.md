@@ -20,7 +20,7 @@ The exercises you should run are on Binder:  **FIXME**
 
 <br>
 <p align="center">
-  <a href="FIXME FIXME FIXME">
+  <a href="https://mybinder.org/v2/gh/jpivarski-talks/2021-02-03-pyhep-numba-tutorial/main?urlpath=lab/tree/tutorial.ipynb">
     <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder" height="40">
   </a>
 <br>
