@@ -85,18 +85,18 @@
 Roughly speaking, compilation makes code faster.
 
 \vspace{0.5 cm}
-\uncover<2->{\textcolor{darkblue}{More precisely, removing hurdles takes the slowness out of code.}}
+\uncover<2->{\textcolor{darkblue}{More precisely, it removes hurdles to take the slowness out of code.}}
 \large
 
 \vspace{0.5 cm}
 \begin{uncoverenv}<2->
 \hfill\begin{minipage}{0.97\linewidth}
 \begin{itemize}
-\item Avoid type-checking every value in a loop over identically typed data.
-\item Avoid following pointers from objects to objects.
-\item Avoid nonsequential memory access.
-\item Avoid translating virtual machine \\ instructions into real instructions.
-\item Avoid garbage collector searches \\ for many small objects.
+\item Avoids type-checking every value in a loop over identically typed data.
+\item Avoids following pointers from objects to objects.
+\item Avoids nonsequential memory access.
+\item Avoids translating virtual machine \\ instructions into real instructions.
+\item Avoids garbage collector searches \\ for many small objects.
 \end{itemize}
 \end{minipage}
 
@@ -109,7 +109,7 @@ Roughly speaking, compilation makes code faster.
 \Large
 
 \vspace{0.5 cm}
-Though usually thought of as single step applying all optimizations,
+Though often thought of as single step applying all optimizations,
 
 \vspace{0.2 cm}
 \hspace{0.6 cm} \begin{minipage}{0.9\linewidth}
@@ -170,11 +170,11 @@ Gains are often \textcolor{darkblue}{factors of 100's}.
 \includegraphics[width=0.75\linewidth]{pypy-logo.jpg}
 \end{center}
 
-Replaces the CPython process; not all libraries/versions of Python work.
+Replaces the CPython process; not all libraries work/versions of Python exist.
 
 \vspace{0.2 cm}
 
-Speeds up the whole program. \mbox{\hspace{4 cm}}
+Speeds up the whole program, without any modifications.
 
 \vspace{0.2 cm}
 
@@ -187,7 +187,47 @@ Gains are often \textcolor{darkblue}{factors of several}.
 \end{columns}
 \end{frame}
 
+\begin{frame}{What kind of code can Numba accelerate?}
+\Large
+\vspace{0.5 cm}
 
+\begin{itemize}
+\item Types must be fully known before the code runs.
+\item Objects must be replaceable with memory-contiguous values.
+\item Functions must have or be built out of low-level equivalents.
+\end{itemize}
+
+\vspace{0.5 cm}
+\uncover<2->{Therefore, only Python libraries that have been specially prepared for Numba work in Numba.}
+
+\vspace{0.4 cm}
+\uncover<3->{Numba optimizes NumPy out-of-the-box, and Awkward Array has been extended as well.}
+
+\large
+
+\vspace{0.4 cm}
+\uncover<3->{(We're also working on other Scikit-HEP libraries, like Vector and Hist.)}
+\end{frame}
+
+\begin{frame}{Numba fits into Python's optimization mindset}
+\Large
+
+\vspace{0.5 cm}
+Most scientific libraries for Python split into a \textcolor{darkblue}{``fast math''} part and a \textcolor{darkblue}{``slow bookkeeping''} part. Optimization effort must be {\it focused}.
+
+\vspace{0.5 cm}
+\uncover<2->{Numba isn't about accelerating everything, it's about identifying the part that has to run fast and fixing it.}
+
+\vspace{0.5 cm}
+\uncover<3->{However, Numba errors can be hard to understand and resolve.}
+
+\vspace{0.5 cm}
+\begin{center}
+\begin{minipage}{0.6\linewidth}
+\centering \uncover<4->{\textcolor{darkorange}{\bf That's what this tutorial is about: how to make Numba happy.}}
+\end{minipage}
+\end{center}
+\end{frame}
 
 
 \end{document}
