@@ -16,7 +16,7 @@ On Zoom; see the [Indico agenda](https://indico.cern.ch/event/985350/) for the l
 
 ## How do I participate?
 
-The exercises you should run are on Binder:  **FIXME**
+The exercises you should run are on Binder:
 
 <br>
 <p align="center">
@@ -40,7 +40,7 @@ Neither Binder nor Slido require authentication.
 
 The [introductory slides are here](https://github.com/jpivarski-talks/2021-02-03-pyhep-numba-tutorial/raw/main/intro.pdf).
 
-The evaluated notebook is here.  **FIXME**
+The [notebook is here](https://nbviewer.jupyter.org/github/jpivarski-talks/2021-02-03-pyhep-numba-tutorial/blob/main/tutorial.ipynb).
 
 A recording of the tutorial session is here.  **FIXME**
 
