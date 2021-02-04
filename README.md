@@ -42,6 +42,6 @@ The [introductory slides are here](https://github.com/jpivarski-talks/2021-02-03
 
 The [notebook is here](https://nbviewer.jupyter.org/github/jpivarski-talks/2021-02-03-pyhep-numba-tutorial/blob/main/tutorial.ipynb).
 
-A recording of the tutorial session is here.  **FIXME**
+A [recording of the tutorial session is here](https://youtu.be/X_BJrmofRWQ).
 
 Join the [PyHEP mailing list](https://hepsoftwarefoundation.org/workinggroups/pyhep.html) or [Gitter channel](https://gitter.im/HSF/PyHEP).
